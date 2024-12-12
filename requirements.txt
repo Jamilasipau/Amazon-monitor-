@@ -5,3 +5,4 @@ schedule
 pyTelegramBotAPI
 beautifulsoup4
 dnspython
+bs4
