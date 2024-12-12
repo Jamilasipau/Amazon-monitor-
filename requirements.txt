@@ -2,3 +2,6 @@ telebot
 pymongo 
 requests
 schedule
+pyTelegramBotAPI
+beautifulsoup4
+dnspython
