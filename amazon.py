@@ -7,7 +7,7 @@ import re
 from pymongo import MongoClient
 
 # Replace with your bot token
-BOT_TOKEN = "7568844140:AAGQlmPglMRMOTuN_ZCzD5V7TZkiOA_SKNg"
+BOT_TOKEN = "7947805886:AAHD7FgIJvfoxiD8PtuXqd27Cl_pcu21gOM"
 bot = telebot.TeleBot(BOT_TOKEN)
 
 # MongoDB setup
