@@ -5,6 +5,7 @@ import time
 import schedule
 import re
 from pymongo import MongoClient
+from flask import Flask
 
 # Replace with your bot token
 BOT_TOKEN = "7568844140:AAHLvHjyMNvhSAfpk3m7RYRjPflxeSeK8uo"
@@ -15,6 +16,19 @@ MONGO_CONNECTION_STRING = "mongodb+srv://botplays:botplays@vulpix.ffdea.mongodb.
 client = MongoClient(MONGO_CONNECTION_STRING)
 db = client["amazon_price_bot"]
 products_collection = db["monitored_products"]
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "I am alive"
+
+def run_http_server():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run_http_server)
+    t.start()
 
 # Function to fetch product title and price from Amazon
 def fetch_price(url):
