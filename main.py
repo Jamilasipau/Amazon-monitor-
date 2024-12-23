@@ -246,11 +246,13 @@ def run_schedule():
 import threading
 threading.Thread(target=run_schedule, daemon=True).start()
 
-# Start the bot
-while True:
-    try:
-        bot.polling()
-    except Exception as e:
-        print(f"Bot polling error: {e}")
-        time.sleep(5)
+if __name__ == "__main__":
+    keep_alive()
+    
+    while True:
+        try:
+            bot.polling(none_stop=True)
+        except Exception as e:
+            print(f"Error occurred: {str(e)}")
+            time.sleep(5)
         
